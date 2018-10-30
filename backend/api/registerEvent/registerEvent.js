@@ -1,0 +1,13 @@
+const restful = require('node-restful')
+const mongoose = restful.mongoose
+
+const eventSchema = new mongoose.Schema({
+	titulo:{type: String, required:[true, 'Informe o login']},
+	descricao:{type: String, required:[true, 'Informe o nome']},
+	data_geracao: { type: Date, default: Date.now },
+	//data_evento:{ type: Date, required:[true]},
+	status:{type: String, required: false, uppercase:true,
+	  enum: ['ATIVO', 'INATIVO']}
+})
+
+module.exports = restful.model('registerEvent', eventSchema)
