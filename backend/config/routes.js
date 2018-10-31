@@ -9,4 +9,7 @@ module.exports = function(server){
 
 	const registerEventService = require ('../api/registerEvent/registerEventService')
 	registerEventService.register(router, '/registerEvents')
+
+	const getEventService = require('../api/getEvent/getEventService')
+	router.route('/getEvent').get(getEventService.get5lastEvets)
 }

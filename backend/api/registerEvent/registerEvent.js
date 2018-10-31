@@ -5,7 +5,7 @@ const eventSchema = new mongoose.Schema({
 	titulo:{type: String, required:[true, 'Informe o login']},
 	descricao:{type: String, required:[true, 'Informe o nome']},
 	data_geracao: { type: Date, default: Date.now },
-	//data_evento:{ type: Date, required:[true]},
+	data_evento:{ type: String, required:[true]},
 	status:{type: String, required: false, uppercase:true,
 	  enum: ['ATIVO', 'INATIVO']}
 })
