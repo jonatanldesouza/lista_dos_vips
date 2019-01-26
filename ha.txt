@@ -1,0 +1,13 @@
+@giro12369874
+@girodeploy12369874
+
+sudo certbot renew --dry-run
+
+db.createUser({user: "admin", pwd: "@admin12369874", roles: [{role: "userAdminAnyDatabase", db: "admin"}]})
+
+
+use listas-dos-vips
+
+db.createUser({user:"appUser", pwd: "12369874", roles: ["readWrite"]})
+
+db.users.insert({name: "admin", email: "admin@email.com", password: "@admin12369874", profiles: ["admin"]})
